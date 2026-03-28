@@ -32,7 +32,7 @@ As a data analyst for a fictional rideshare company, I investigated key business
 | # | Question | Status |
 |---|---|---|
 | 1 | How is monthly revenue trending, and how volatile is it? | ✅ Done |
-| 2 | When is demand highest — by hour and day of week? | 🔄 In progress |
+| 2 | When is demand highest — by hour and day of week? | ✅ Done |
 | 3 | Who are the top-performing drivers, and who is underperforming? | ⏳ Pending |
 | 4 | Who are our most valuable riders, and are we retaining them? | ⏳ Pending |
 | 5 | Are payments completing successfully, and which methods dominate? | ⏳ Pending |
@@ -70,7 +70,8 @@ As a data analyst for a fictional rideshare company, I investigated key business
 rideshare-analytics/
 │
 ├── data/
-│   └── rideshare.db
+│   ├── rideshare.db
+│   └── schema.sql
 │
 ├── sql/
 │   ├── 01_exploration.sql
