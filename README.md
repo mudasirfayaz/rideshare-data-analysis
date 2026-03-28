@@ -41,9 +41,18 @@ As a data analyst for a fictional rideshare company, I investigated key business
 
 ## 💡 Key Findings (so far)
 
+### Q1 — Revenue Trend
 - **Revenue is volatile** — 13 out of 29 months showed a month-over-month decline (45% of the time)
 - **No sustained growth trend** — revenue has oscillated between ~$17k and ~$22k with no clear upward trajectory over 2.5 years
 - **November 2022** was the worst single month — a drop of $4,348 from the prior month
+
+### Q2 — Peak Hours & Days
+- **Demand is evenly spread across all 7 days** — no dramatic weekend/weekday split (2,347–2,459 trips per day)
+- **Friday has the highest avg fare ($41.85)** — 43% more expensive than Sunday ($29.26) despite similar trip volumes
+- **Busiest hour is 6pm (754 trips)** — classic evening commute
+- **Highest fares occur at 7am ($54.03), 8am ($53.27), and 7pm ($57.76)** — surge pricing activates during commute hours and late night, not just on volume alone
+- **Operations insight:** driver availability should be prioritised at 7am, 8am, 6pm, and 7pm for maximum revenue impact
+ 
 
 ---
 
@@ -66,10 +75,11 @@ rideshare-analytics/
 ├── sql/
 │   ├── 01_exploration.sql
 │   ├── 02_revenue_trend.sql
+│   ├── 03_peak_hours_days.sql
 │   └── ...
 │
 ├── powerbi/
-│   └── rideshare_dashboard.pbix (in progress)
+│   └── rideshare_dashboard.pbix
 │
 └── README.md
 ```
