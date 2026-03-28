@@ -6,7 +6,8 @@ WITH t1 AS (
 			ROUND(SUM(total_fare), 1) AS total_revenue
 		FROM trips
 		WHERE status = "completed"
-		GROUP BY month),
+		GROUP BY month
+	),
      t2 AS (
         SELECT
             month,
