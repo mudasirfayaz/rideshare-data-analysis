@@ -34,7 +34,7 @@ As a data analyst for a fictional rideshare company, I investigated key business
 | 1 | How is monthly revenue trending, and how volatile is it? | ✅ Done |
 | 2 | When is demand highest — by hour and day of week? | ✅ Done |
 | 3 | Who are the top-performing drivers, and who is underperforming? | ✅ Done |
-| 4 | Who are our most valuable riders, and are we retaining them? | ⏳ Pending |
+| 4 | Who are our most valuable riders, and are we retaining them? | ✅ Done |
 | 5 | Are payments completing successfully, and which methods dominate? | ⏳ Pending |
 
 ---
@@ -63,6 +63,13 @@ As a data analyst for a fictional rideshare company, I investigated key business
 - **Driver rating does NOT correlate with revenue** — Nancy Price earns the most with only a 3.97 rating, while two perfect 5.0-rated drivers (Patricia Bailey, Cynthia Cook) rank 18th and 40th in revenue
 - **Revenue range is wide** — top driver earns $6,099 vs. bottom driver $736, an 8x difference across the fleet
 
+### Q4 — Rider Analysis
+- **76% of riders have churned (1,199 out of 1,571)** — a critical retention problem for leadership to address
+- **One-timers have a 97.9% churn rate** — 428 riders took exactly one trip and never returned
+- **Power users are the most loyal — only 26.1% churn** — 209 out of 283 power users are still active
+- **Key conversion milestone: the 6th trip** — churn drops sharply from 89% (Casual) to 69% (Regular) once a rider crosses 6 trips; getting casual riders to their 6th trip should be a growth team priority
+- **Houston dominates top spenders** — 5 of the top 10 highest-spending riders are Houston-based Power users
+
 ---
 
 ## 🛠️ Tools Used
@@ -86,6 +93,7 @@ rideshare-analytics/
 │   ├── 02_revenue_trend.sql
 │   ├── 03_peak_hours_days.sql
 │   ├── 04_driver_performance.sql
+│   ├── 05_rider_analysis.sql
 │   └── ...
 │
 ├── powerbi/
