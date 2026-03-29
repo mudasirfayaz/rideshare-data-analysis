@@ -35,7 +35,7 @@ As a data analyst for a fictional rideshare company, I investigated key business
 | 2 | When is demand highest — by hour and day of week? | ✅ Done |
 | 3 | Who are the top-performing drivers, and who is underperforming? | ✅ Done |
 | 4 | Who are our most valuable riders, and are we retaining them? | ✅ Done |
-| 5 | Are payments completing successfully, and which methods dominate? | ⏳ Pending |
+| 5 | Are payments completing successfully, and which methods dominate? | ✅ Done |
 
 ---
 
@@ -70,6 +70,14 @@ As a data analyst for a fictional rideshare company, I investigated key business
 - **Key conversion milestone: the 6th trip** — churn drops sharply from 89% (Casual) to 69% (Regular) once a rider crosses 6 trips; getting casual riders to their 6th trip should be a growth team priority
 - **Houston dominates top spenders** — 5 of the top 10 highest-spending riders are Houston-based Power users
 
+### Q5 — Payment Analysis
+- **All three payment methods are nearly equal** — card (33.87%), wallet (33.40%), cash (32.72%) — no single method dominates
+- **Card generates the most total revenue ($208k)** despite only a ~1% lead in transaction share
+- **Failure rate is low overall (0.96%–3.70%)** across 30 months — no systemic payment problem
+- **July 2022 had the highest failure rate (3.70%, 20 failed payments)** — the only month that stands out as an anomaly
+- **No upward trend in failures** — the problem is not worsening over time
+- **Refunds are consistently minimal (2–9 per month)** — very low dispute activity across the platform
+
 ---
 
 ## 🛠️ Tools Used
@@ -94,6 +102,7 @@ rideshare-analytics/
 │   ├── 03_peak_hours_days.sql
 │   ├── 04_driver_performance.sql
 │   ├── 05_rider_analysis.sql
+│   ├── 06_payment_analysis.sql
 │   └── ...
 │
 ├── powerbi/
