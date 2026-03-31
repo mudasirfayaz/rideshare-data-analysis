@@ -172,8 +172,9 @@ ORDER BY decile;
 
 -- 1. ~15% trips are cancelled, with majority by riders → potential UX or intent issue
 -- 2. Most cancellations attributed to 'personal emergency' → may indicate placeholder or low-signal reason
--- 3. One-time riders show extremely high churn → weak first experience or low retention hooks
--- 4. Mid-frequency riders also churn heavily → retention problem is not limited to one-timers
--- 5. Driver activity likely uneven → requires distribution validation 
--- 6. Revenue likely concentrated among top rider segments → dependency risk on small user base
+-- 3. Combining 'too long wait'and 'waited too long', it becomes the leading driver of cancellations (~18%) → wait time sensitivity
+-- 4. One-time riders show extremely high churn → weak first experience or low retention hooks
+-- 5. Mid-frequency riders also churn heavily → retention problem is not limited to one-timers
+-- 6. Driver activity likely uneven → requires distribution validation 
+-- 7. Revenue likely concentrated among top rider segments → dependency risk on small user base
 
