@@ -3,12 +3,12 @@
 USE rideshare;
 
 -- ==========================================
--- Q1. Monthly Revenue Trend
+-- Monthly Revenue Trend
 -- ==========================================
 
 WITH monthly_revenue AS (
     SELECT 
-        DATE_FORMAT(requested_at, "%Y-%m") AS month,
+        DATE_FORMAT(requested_at, "%Y-%m-01") AS month,
         SUM(total_fare) AS total_revenue
     FROM trips
     WHERE status = "completed"
@@ -34,20 +34,18 @@ SELECT
     CASE
         WHEN total_revenue - prev_month_revenue > 0 THEN 'Growth'
         WHEN total_revenue - prev_month_revenue < 0 THEN 'Decline'
-        WHEN total_revenue - prev_month_revenue = 0 THEN 'Flat'
-        ELSE NULL
+        ELSE 'Flat'
     END AS trend
 FROM trend_calc
 ORDER BY month;
 
-
 -- ==========================================
--- Q1. Revenue Volatility 
+-- Revenue Volatility 
 -- ==========================================
 
 WITH monthly_revenue AS (
     SELECT 
-        DATE_FORMAT(requested_at, "%Y-%m") AS month,
+        DATE_FORMAT(requested_at, "%Y-%m-01") AS month,
         SUM(total_fare) AS total_revenue
     FROM trips
     WHERE status = "completed"
@@ -58,17 +56,3 @@ SELECT
     ROUND(STDDEV(total_revenue), 2) AS stddev_revenue,
     ROUND(STDDEV(total_revenue) / AVG(total_revenue), 4) AS coefficient_of_variation
 FROM monthly_revenue;
-
--- ==============================
--- OBSERVATIONS
--- ==============================
-
--- 1. Revenue does not show sustained momentum, indicating the business lacks consistent growth drivers 
---    and may be sensitive to short-term demand fluctuations.
-
--- 2. Despite frequent month-to-month fluctuations, the low volatility (CV ~5.41%) indicates that 
---    revenue changes are relatively small in magnitude, suggesting a stable overall revenue base 
---    with minor short-term variations.
-
--- 3. The combination of low volatility and lack of sustained growth suggests the business is stable but not scaling, 
---    indicating a need for strategies focused on growth acceleration rather than stability.
