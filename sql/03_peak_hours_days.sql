@@ -1,8 +1,6 @@
-USE rideshare;
+-- Q2. When is demand highest — by hour and day of week?
 
--- ==========================================
--- Q2. Demand Patterns
--- ==========================================
+USE rideshare;
 
 WITH count_stats AS (
     SELECT 
@@ -19,11 +17,7 @@ WITH count_stats AS (
 ),
 final_dataset AS (
     SELECT
-        day_of_week,
-        hour_of_day,
-        trip_count,
-        pct_trip_count,
-        avg_fare,
+        *,
         ROW_NUMBER() OVER (PARTITION BY day_of_week ORDER BY trip_count DESC) AS rank_within_day,
         ROW_NUMBER() OVER (ORDER BY trip_count DESC) AS overall_rank,
         CASE day_of_week
@@ -34,51 +28,19 @@ final_dataset AS (
             WHEN 'Friday' THEN 5
             WHEN 'Saturday' THEN 6
             WHEN 'Sunday' THEN 7
-            ELSE 99
         END AS day_order
     FROM count_stats
 )
 
--- ==============================
--- Pattern View (Chronological)
--- ==============================
+-- Pattern View
 SELECT 
     day_of_week,
     hour_of_day,
     trip_count,
     pct_trip_count,
-    avg_fare,
-    rank_within_day
+    avg_fare
 FROM final_dataset
-ORDER BY day_order;
+ORDER BY day_order, hour_of_day;
 
-
--- ==============================
--- Ranking View (Peak Demand)
--- ==============================
--- Uncomment to use
--- SELECT 
---     day_of_week,
---     hour_of_day,
---     trip_count,
---     pct_trip_count,
---     avg_fare,
---     rank_within_day,
---     overall_rank
--- FROM final_dataset
--- ORDER BY overall_rank;
-
-
-
--- ===============================================
---  Observations
--- ===============================================
-
--- 1. Demand peaks during weekday morning and evening hours, indicating strong commuter-driven usage patterns. 
---    These time windows consistently rank highest across multiple weekdays, suggesting predictable, routine-based demand.
-
--- 2. Peak demand hours do not consistently align with the highest average fares, suggesting that pricing is not
---    strictly driven by volume and may depend on additional factors such as distance or supply conditions.
-
--- 3. Weekend demand patterns differ from weekdays, showing more distributed activity and peak hours 
---    shifting toward late-night and midday periods, reflecting more flexible, non-commute usage
+-- Peak Demand (optional)
+-- SELECT * FROM final_dataset WHERE overall_rank = 1;
