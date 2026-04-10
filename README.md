@@ -73,8 +73,8 @@ Using SQL for analysis and Power BI for visualization, the project focuses on id
 ## 🛠️ Tools Used
 
 - **MySQL** — data exploration and analytical queries
-- **Power BI Desktop** — dashboard and visualizations _(in progress)_
-- **DAX** — calculated measures in Power BI _(in progress)_
+- **Power BI Desktop** — dashboard and visualizations
+- **DAX** — calculated measures in Power BI
 
 ---
 
@@ -107,7 +107,7 @@ rideshare-analytics/
 
 ## 📊 Dashboard Preview
 
-_Coming soon — Power BI dashboard screenshots will be added here._
+<img width="1178" height="665" alt="Screenshot 2026-04-10 113800" src="https://github.com/user-attachments/assets/855fdf7d-637d-41cb-ac88-5b3691e645cb" />
 
 ---
 
