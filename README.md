@@ -22,6 +22,14 @@ The objective is to transform raw data into actionable insights that can support
 
 ![Dashboard](images/dashboard.png)
 
+## 📊 Dashboard Breakdown
+
+- **Top KPIs** → Overall business health (revenue, trips, success rate)
+- **Revenue Trend** → Identifies growth stagnation and volatility
+- **Demand Heatmap** → Highlights commuter-driven usage patterns
+- **Driver Scatter Plot** → Shows trade-off between efficiency and reliability
+- **Rider Segmentation** → Reveals high churn and revenue concentration
+- **Payment Analysis** → Confirms system reliability across methods
 ---
 
 ## 🔍 Key Insights
@@ -32,6 +40,15 @@ The objective is to transform raw data into actionable insights that can support
 - A small group of power users drives the majority of revenue
 - Early-stage rider churn is significantly high (especially one-time users)
 - Payments are highly reliable (~99% success rate) across all methods
+
+---
+
+## 📈 Business Impact
+
+- Growth requires improving rider retention, not just acquisition
+- Peak demand periods should be optimized for pricing and supply
+- Driver performance should focus on reliability, not just volume
+- Revenue dependency on power users introduces business risk
 
 ---
 
@@ -58,6 +75,7 @@ The objective is to transform raw data into actionable insights that can support
 ```
 rideshare-analytics/
 │
+├── data/
 ├── sql/
 ├── powerbi/
 ├── images/
